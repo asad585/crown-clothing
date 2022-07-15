@@ -19,15 +19,7 @@ const SignInForm = () => {
         setFormFields({ ...formFields, [name]: value })
     };
 
-    const handleSubmit = async (event) => {
-        event.preventDefault();
-
-        try {
-            const response = await signInAuthUserWithEmailAndPassword(email, password);
-        } catch(error) {
-            console.log('user creation error',error);
-        }
-    }
+   
 
     const signInWithGoogle = async () => {
         const { user } = await signInWithGooglePopup();
