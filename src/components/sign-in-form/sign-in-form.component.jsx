@@ -27,7 +27,7 @@ const SignInForm = () => {
         } catch(error) {
             console.log('user creation error',error);
         }
-    }
+    }   
 
     const signInWithGoogle = async () => {
         const { user } = await signInWithGooglePopup();
