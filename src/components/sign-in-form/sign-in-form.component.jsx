@@ -31,6 +31,9 @@ const SignInForm = () => {
             console.log(response);
             resetFormFields();
         } catch(error) {
+            if(error.code === 'auth/wrong-password'){
+                alert('incorrect password or email')
+            }
             console.log('user creation error',error);
         }
     }   
@@ -51,7 +54,7 @@ const SignInForm = () => {
                 <FormInput label="Password" type="password" required onChange={handleChange} name="password" value={password} />
                 <div className='buttons-container'>
                     <Button buttonType='default' type="submit">Sign In</Button>
-                    <Button buttonType='google' onClick={signInWithGoogle} >Google sign In</Button>
+                    <Button type='button' buttonType='google' onClick={signInWithGoogle} >Google Sign In</Button>
                 </div>
             </form>
         </div>
