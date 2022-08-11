@@ -3,8 +3,10 @@ import { Outlet, Link } from 'react-router-dom';
 
 import { ReactComponent as CrwnLogo } from '../../assets/crown.svg';
 import { UserContext } from '../../contexts/user.context';
+import { signOutUser } from '../../utils/firebase/firebase.util';
+import CardIcon from '../../components/cart-icon/cart-icon.component';
+
 import './navigation.scss';
-import { signOutUser } from '../../utils/firebase/firebase.util'
 
 const Navigation = () => {
   const { currentUser } = useContext(UserContext);
@@ -32,6 +34,8 @@ const Navigation = () => {
               )
             }
             
+            <CardIcon />
+
         </div>
 
       </div>
